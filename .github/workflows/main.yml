@@ -45,6 +45,7 @@ jobs:
         mkdir ../build
         cp *.war ../build
         tar -cvf deploy.tar ../build/
+        ls -al
     - uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.HOST }}
