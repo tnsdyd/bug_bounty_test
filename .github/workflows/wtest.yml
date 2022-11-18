@@ -15,9 +15,9 @@ jobs:
     name: deploy
     steps:
     - uses: actions/checkout@v3
-    - name: Checkout
+      name: Checkout
     - uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-    - name: deploy file
+      name: deploy file
       with:
         username: 'ec2amaz-6cr72ji'
         server: '13.209.87.212'
