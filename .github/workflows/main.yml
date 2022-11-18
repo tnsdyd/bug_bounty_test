@@ -25,12 +25,12 @@ jobs:
         distribution: adopt 
     - name: Build with Maven
       run: |
-        cd test3
+        cd test2
         mvn package
     - uses: actions/upload-artifact@v3
       with:
-        name: test3
-        path: test3/target/test3.war
+        name: test2
+        path: test2/target/test2.war
   scp:
     name: scp
     runs-on: ubuntu-latest
@@ -38,7 +38,7 @@ jobs:
     steps:
     - uses: actions/download-artifact@v3
       with:
-        name: test3
+        name: test2
     - name: Run a multi-line script
       run: |
         ls -al
@@ -69,6 +69,6 @@ jobs:
         script: |
           tar -xvf deploy.tar -C .
           cd build 
-          mv test3.war /usr/local/bin/apache-tomcat-9.0.69/webapps/
+          mv test2.war /usr/local/bin/apache-tomcat-9.0.69/webapps/
           ls -al /usr/local/bin/apache-tomcat-9.0.69/webapps/
           bash /usr/local/bin/apache-tomcat-9.0.69/bin/startup.sh
