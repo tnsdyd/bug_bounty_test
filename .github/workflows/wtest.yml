@@ -1,4 +1,4 @@
-name: maven test
+name: win test
 
 on: 
   workflow_dispatch:
