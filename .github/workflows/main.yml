@@ -44,7 +44,7 @@ jobs:
         ls -al
         mkdir ../build
         cp *.war ../build
-        tar -cvf deploy.tar ../build/
+        tar -cvf deploy1.tar ../build/
         ls -al
     - uses: appleboy/scp-action@master
       with:
@@ -52,7 +52,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
-        source:  deploy.tar
+        source:  deploy1.tar
         target: /home/ubuntu/
   deploy:
     name: deploy
@@ -68,7 +68,7 @@ jobs:
         key: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
         script: |
-          tar -xvf deploy.tar -C .
+          tar -xvf deploy1.tar -C .
           cd build 
           mv test2.war /usr/local/bin/apache-tomcat-9.0.69/webapps/
           ls -al /usr/local/bin/apache-tomcat-9.0.69/webapps/
