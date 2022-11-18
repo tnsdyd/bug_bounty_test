@@ -1,0 +1,27 @@
+name: maven test
+
+on: 
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'
+jobs:
+  deploy_job:
+    runs-on: ubuntu-latest
+    name: deploy
+    steps:
+    - uses: actions/checkout@v3
+      name: Checkout
+    - uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+      name: deploy file
+      with:
+        username: 'ec2amaz-6cr72ji'
+        server: '13.209.87.212'
+        ssh_private_key: ${{ secrets.KEY }} 
+        local_path: 'test2'
+        remote_path: '/c:/.'
+        sftpArgs: '-o ConnectTimeout=5'
