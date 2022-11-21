@@ -21,7 +21,8 @@ jobs:
         mkdir ../build
         cp *.html ../build
         tar -cvf deploy3.tar ../build/
-        ls -al    
+        ls -al
+        pwd
     - name: ssh key with passphrase
       uses: appleboy/scp-action@master
       with:
@@ -30,11 +31,11 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         source: deploy3.tar
-        target: "c:/inetpub/wwwroot/"
+        target: /inetpub/wwwroot/
     - name: test
       run: |
-        tar -xvf \inetpub\wwwroot\deploy.tar -C .
+        tar -xvf /inetpub/wwwroot/deploy.tar -C .
         cd build 
         mv test.html ../test.html
-        DIR \inetpub\wwwroot\
+        DIR /inetpub/wwwroot/
            
