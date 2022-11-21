@@ -31,7 +31,7 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         source: deploy3.tar
-        target: 'C:\Users\Administrator\'
+        target: 'C:\'
     - name: test
       run: |
         tar -xvf /inetpub/wwwroot/deploy.tar -C .
