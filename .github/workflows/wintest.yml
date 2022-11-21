@@ -15,14 +15,20 @@ jobs:
     name: deploy
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: ssh 
-      uses: appleboy/ssh-action@master
+    - uses: actions/checkout@v3 
+    - name: tar
+      run: |
+        #mkdir ../build
+        #cp *.html ../build
+        #tar -cvf deploy3.tar ../build/
+        ls -al    
+    - name: ssh key with passphrase
+      uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.HOST2 }}
         username: ${{ secrets.USERNAME2 }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        script: |
-          DIR
+        source: "test.html"
+        target: "c:/inetpub/wwwroot"
            
