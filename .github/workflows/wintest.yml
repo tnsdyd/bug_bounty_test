@@ -30,8 +30,8 @@ jobs:
         username: ${{ secrets.USERNAME2 }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        source: /home/runner/work/two_brach/two_brach/deploy3.tar
-        target: /inetpub/wwwroot/
+        source: home/runner/work/two_brach/two_brach/deploy3.tar
+        target: 'C:\Users\Administrator\'
     - name: test
       run: |
         tar -xvf /inetpub/wwwroot/deploy.tar -C .
