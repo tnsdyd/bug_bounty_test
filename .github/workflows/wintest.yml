@@ -18,9 +18,9 @@ jobs:
     - uses: actions/checkout@v3 
     - name: tar
       run: |
-        #mkdir ../build
-        #cp *.html ../build
-        #tar -cvf deploy3.tar ../build/
+        mkdir ../build
+        cp *.html ../build
+        tar -cvf deploy3.tar ../build/
         ls -al    
     - name: ssh key with passphrase
       uses: appleboy/scp-action@master
@@ -29,6 +29,12 @@ jobs:
         username: ${{ secrets.USERNAME2 }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        source: "test.html"
+        source: "deploy3.tar"
         target: "c:/inetpub/wwwroot"
+    - name: test
+      run: |
+        tar -xvf c:/inetpub/wwwroot/deploy.tar -C .
+        cd build 
+        mv test.html ../test.html
+        DIR c:/inetpub/wwwroot/
            
