@@ -30,11 +30,11 @@ jobs:
         username: ${{ secrets.USERNAME2 }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        source: deploy3.tar
-        target: 'C:\'
+        source: 'deploy3.tar'
+        target: 'c:\'
     - name: test
       run: |
-        tar -xvf /inetpub/wwwroot/deploy.tar -C .
+        tar -xvf /inetpub/wwwroot/deploy3.tar -C .
         cd build 
         mv test.html ../test.html
         DIR /inetpub/wwwroot/
