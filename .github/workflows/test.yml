@@ -1,4 +1,4 @@
-name: windowtest
+name: windowtest3
 
 on: 
   workflow_dispatch:
