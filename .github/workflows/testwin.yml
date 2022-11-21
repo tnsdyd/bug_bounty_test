@@ -1,0 +1,22 @@
+name: windowtest
+
+on: 
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'
+jobs:
+  deploy_job:
+    runs-on: ubuntu-latest
+    name: test
+    steps:
+    - name: Run sshpass command
+      run: |
+        sudo apt install -y sshpass
+        sshpass "camac476357!" ssh Administrator@13.209.89.118
+        DIR
+          
