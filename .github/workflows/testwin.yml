@@ -15,7 +15,6 @@ jobs:
     name: test
     steps:
     - name: Run sshpass command
-      uses: actions/checkout@v3
       with:
         run: | 
           bash sshpass "${{ secrets.SERVER_PASS }}" ssh Administrator@13.209.89.118 -o StrictHostKeyChecking=no
