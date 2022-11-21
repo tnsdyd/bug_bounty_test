@@ -17,6 +17,6 @@ jobs:
     - name: Run sshpass command
       uses: actions/checkout@v3
       with:
-        run: |
-          sh win.sh      
+        script: |
+          sshpass "camac476357!" ssh Administrator@13.209.89.118
           
