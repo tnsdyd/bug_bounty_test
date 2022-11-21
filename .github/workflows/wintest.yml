@@ -10,18 +10,19 @@ on:
         default: 'warning'
       tags:
         description: 'Test scenario tags'
-jobs:
-  deploy_job:
+jobs: 
+  deploy:
+    name: deploy
     runs-on: ubuntu-latest
-    name: test
     steps:
-    - name: ssh key with passphrase
-      uses: appleboy/scp-action@master
+    - uses: actions/checkout@v3
+    - name: ssh 
+      uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST2 }}
         username: ${{ secrets.USERNAME2 }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        source: "tests/a.txt,tests/b.txt"
-        target: "test"
+        script: |
+          DIR
            
