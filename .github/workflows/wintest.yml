@@ -29,8 +29,8 @@ jobs:
         username: ${{ secrets.USERNAME2 }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        source: "deploy3.tar"
-        target: "/inetpub/wwwroot/"
+        source: deploy3.tar
+        target: "c:/inetpub/wwwroot/"
     - name: test
       run: |
         tar -xvf \inetpub\wwwroot\deploy.tar -C .
