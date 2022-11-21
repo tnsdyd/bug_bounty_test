@@ -23,7 +23,5 @@ jobs:
         user: ${{ secrets.SERVER_USER }}
         pass: ${{ secrets.SERVER_PASS }}
         run: |
-      # your 
-      # commands
-      # here
+          DIR
            
