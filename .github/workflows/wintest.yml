@@ -21,7 +21,7 @@ jobs:
         host: ${{ secrets.SERVER_HOST }}
         port: 22
         user: ${{ secrets.SERVER_USER }}
-        pass: ${{ secrets.SERVER_PASS }}
+        pass: "camac476357!"
         run: |
           DIR
            
