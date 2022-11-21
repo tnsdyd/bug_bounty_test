@@ -1,8 +1,9 @@
 #!/bin/bash
 
-PASS='sshpass -p camac476357! ssh Administrator@13.209.89.118 -o StrictHostKeyChecking=no'
-PASS2='sshpass -p camac476357! scp test.html Administrator@13.209.89.118:c:/'
+TEST='sshpass -p camac476357! ssh Administrator@15.164.164.104 -o StrictHostKeyChecking=no'
+TEST2='sshpass -p camac476357! scp test.html Administrator@15.164.164.104:c:/'
 
-sudo apt install -y sshpass
-
-$PASS exit
+$TEST dir 'c:\inetpub\wwwroot'
+$TEST2
+$TEST copy 'c:/test.html c:\inetpub\wwwroot'
+$TEST dir 'c:\inetpub\wwwroot'
