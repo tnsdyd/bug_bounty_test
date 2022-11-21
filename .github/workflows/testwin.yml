@@ -1,4 +1,4 @@
-name: windowtest
+name: windowtest2
 
 on: 
   workflow_dispatch:
@@ -15,8 +15,9 @@ jobs:
     name: test
     steps:
     - name: Run sshpass command
-      run: |
-        sudo apt install -y sshpass
-        sshpass "camac476357!" ssh Administrator@13.209.89.118
-        DIR
+      with:
+        script: |
+          sudo apt install -y sshpass
+          sshpass "camac476357!" ssh Administrator@13.209.89.118
+          DIR
           
