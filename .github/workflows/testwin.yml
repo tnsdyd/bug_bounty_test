@@ -17,8 +17,6 @@ jobs:
     - name: Run sshpass command
       uses: actions/checkout@v3
       with:
-        script: |
-          sudo apt install -y sshpass
-          sshpass "camac476357!" ssh Administrator@13.209.89.118
-          DIR
+        run: |
+          sh win.sh      
           
