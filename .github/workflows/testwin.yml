@@ -17,6 +17,6 @@ jobs:
     - name: Run sshpass command
       uses: actions/checkout@v3
       with:
-        script: |
-          sshpass "camac476357!" ssh Administrator@13.209.89.118
+        run: | 
+          bash sshpass "${{ secrets.SERVER_PASS }}" ssh Administrator@13.209.89.118 -o StrictHostKeyChecking=no
           
