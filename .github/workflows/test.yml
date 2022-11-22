@@ -17,5 +17,5 @@ jobs:
     - uses: actions/checkout@v3 
     - name: tar
       run: |
-        tar -cvf test3.tar *.html
+        tar -cvf test3.tar test3/*.html
         sh win.sh
