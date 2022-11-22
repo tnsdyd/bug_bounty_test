@@ -7,5 +7,6 @@ $TEST dir 'c:\'
 $TEST dir 'c:\inetpub\wwwroot'
 $TEST2
 $TEST dir 'c:\'
-$TEST tar -xvf c:/test3.tar -C 'c:\inetpub\wwwroot'
+$TEST tar -xvf c:/test3.tar -C '\inetpub'
+$TEST copy '\inetpub\test3\test*' '\inetpub\wwwroot\'
 $TEST dir 'c:\inetpub\wwwroot'
