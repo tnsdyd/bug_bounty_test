@@ -19,5 +19,3 @@ jobs:
       run: |
         tar -cvf test3.tar test3/*.html
         sh win.sh
-        curl 3.39.10.170/test1.html
-        curl 3.39.10.170/test.html
