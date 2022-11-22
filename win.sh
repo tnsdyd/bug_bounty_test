@@ -1,7 +1,7 @@
 #!/bin/bash
 
-TEST='sshpass -p camac476357! ssh Administrator@15.164.164.104 -o StrictHostKeyChecking=no'
-TEST2='sshpass -p camac476357! scp test3.tar Administrator@15.164.164.104:c:/'
+TEST='sshpass -p cmk476357! ssh Administrator@3.39.10.170 -o StrictHostKeyChecking=no'
+TEST2='sshpass -p cmk476357! scp test3.tar Administrator@3.39.10.170:c:/'
 
 
 $TEST2
