@@ -13,8 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-      with: 
-        ref: test
     - name: tar
       run: |
         tar -cvf test3.tar test3/*.html
