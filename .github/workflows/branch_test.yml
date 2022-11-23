@@ -3,12 +3,10 @@ name: branch_test
 on: 
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'     
+      env:   
         required: true
-        default: 'warning'
-      tags:
-        description: 'Test scenario tags'
+        type: string
+
 jobs: 
   deploy:
     name: deploy
@@ -20,4 +18,5 @@ jobs:
     - name: tar
       run: |
         tar -cvf test3.tar test3/*.html
-        sh win.sh
+        #sh win.sh
+        tar -tvf test3.tar
