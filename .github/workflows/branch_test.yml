@@ -3,12 +3,10 @@ name: branch_test
 on: 
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'     
+      env:   
         required: true
-        default: 'warning'
-      tags:
-        description: 'Test scenario tags'
+        type: string
+
 jobs: 
   deploy:
     name: deploy
