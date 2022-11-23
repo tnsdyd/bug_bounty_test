@@ -1,4 +1,4 @@
-name: windowtest3
+name: branch_test
 
 on: 
   workflow_dispatch:
