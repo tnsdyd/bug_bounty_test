@@ -25,7 +25,6 @@ jobs:
     - name: docker pull test
       run: |
         docker pull mm0820/ant_test:0.1
-        clear
         docker images
     - uses: actions/checkout@v3
     - name: Set up JDK 11
