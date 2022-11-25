@@ -15,7 +15,7 @@ jobs:
   in_container:
     runs-on: ubuntu-latest
     container:
-      image: node:14.15.0-alpine3.12
+      image: buildpack-deps:bullseye
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 11
@@ -24,6 +24,9 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
       - name: Build with Ant
-        run: ant -noinput -buildfile build.xml
+        run: |
+          ssh -h
+          ant -v 
+          echo $JAVA_HOME
 
 
