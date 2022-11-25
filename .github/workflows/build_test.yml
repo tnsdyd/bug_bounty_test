@@ -1,0 +1,24 @@
+# This workflow will build a Java project with Ant
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-ant
+
+name: build_test
+
+on:
+  workflow_dispatch: 
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+
+jobs:
+  node-docker:
+    runs-on: ubuntu-latest
+    container:
+      image: node:14.15.0-alpine3.12
+    steps:
+         - name: Log the node version
+           run: |
+             node -v
+             cat /etc/os-release  
+
