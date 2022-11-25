@@ -24,9 +24,7 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
       - name: Build with Ant
-        run: |
-          ssh -h
-          ant -v 
-          echo $JAVA_HOME
+        uses: appleboy/ssh-action@master
+        
 
 
