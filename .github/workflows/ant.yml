@@ -28,8 +28,13 @@ jobs:
         docker login 
         docker pull mm0820/ant_test:0.1
         docker images
+  containertest:
+    runs-on: ubuntu-latest
     container:
       image: mm0820/ant_test:0.1
+    steps: 
+    - name: test
+      run: docker images
 
         
 
