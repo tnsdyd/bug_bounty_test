@@ -16,11 +16,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: docker hub login
-      uses: docker/login-action@v2
-      with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
+#    - name: docker hub login
+#      uses: docker/login-action@v2
+#      with:
+#        username: ${{ secrets.DOCKERHUB_USERNAME }}
+#        password: ${{ secrets.DOCKERHUB_TOKEN }}
 #    - name: docker pull test
 #      run: |
 #        docker login 
@@ -36,7 +36,6 @@ jobs:
     steps: 
     - name: test
       run: |
-        ant -v 
         echo $JAVA_HOME
 
         
