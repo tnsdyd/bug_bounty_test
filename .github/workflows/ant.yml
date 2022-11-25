@@ -24,6 +24,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: docker pull test
       run: |
+        docker login
         docker pull ant_test:0.1
     - uses: actions/checkout@v3
     - name: Set up JDK 11
