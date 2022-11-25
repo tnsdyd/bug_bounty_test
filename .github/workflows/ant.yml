@@ -25,6 +25,8 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: docker pull test
       run: |
+        docker login 
+        docker pull mm0820/ant_test:0.1
         docker images
 
         
