@@ -25,5 +25,4 @@ jobs:
         distribution: 'temurin'
     - name: Build with Ant
       run: |
-        ant/bin/ant -v
         docker images
