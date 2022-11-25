@@ -12,13 +12,12 @@ on:
         default: 'warning'
 
 jobs:
-  node-docker:
+  in_container:
     runs-on: ubuntu-latest
     container:
       image: node:14.15.0-alpine3.12
     steps:
-         - name: Log the node version
-           run: |
-             node -v
-             cat /etc/os-release  
+      - uses: actions/checkout@v3
+      - name: test
+        run: ls -al
 
