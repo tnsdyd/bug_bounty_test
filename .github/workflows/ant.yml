@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@v3
     - name: docker hub login
       uses: docker/login-action@v2
       with:
@@ -28,4 +29,6 @@ jobs:
         docker images
     container:
       image: mm0820/ant_test:0.1
+
+        
 
