@@ -23,25 +23,33 @@ jobs:
         with:
           java-version: '8'
           distribution: 'temurin'
-      #- name: Build with Ant
-      #  run: |
-      #    ant/bin/ant -noinput -buildfile build/build.xml
-      #- uses: actions/upload-artifact@v3
-      #  with:
-      #    name: testwar
-      #    path: build/build/helloworld-0.1-dev.war  
- # scp:
- #   name: scp
- #   runs-on: ubuntu-latest
- #   needs: in_container_build
- #   steps:
- #     - uses: actions/download-artifact@v3
- #       with:
- #         name: testwar
+      - name: Build with Ant
+        run: |
+          ant/bin/ant -noinput -buildfile build/build.xml
+      - uses: actions/upload-artifact@v3
+        with:
+          name: testwar
+          path: build/build/helloworld-0.1-dev.war  
+  scp:
+    name: scp
+    runs-on: ubuntu-latest
+    needs: in_container_build
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: testwar
+      - uses: applybot/scp-actions@master
+        with:
+          host: 43.201.105.29
+          username: Administrator
+          password: ${{ secrets.PASSWORD3 }}
+          port: ${{ secrets.PORT }}
+          source: "test.war"
+          target: C:\inetpub 
   ssh: 
     name: ssh
     runs-on: ubuntu-latest
- #   needs: scp
+    needs: scp
     container:
       image: debian:11
     steps:
