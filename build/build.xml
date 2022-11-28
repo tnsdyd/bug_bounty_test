@@ -2,7 +2,7 @@
 	<property name="src" location="src/java" />
 	<property name="libcompile" location="lib/compile" />
 	<property name="libruntime" location="lib/runtime" />
-	<property name="web" location="build/web" />
+	<property name="web" location="web" />
 	<property name="webxml" location="${web}/WEB-INF/web.xml" />
 	<property name="build" location="build" />
 	<property name="classes" location="${build}/classes" />
