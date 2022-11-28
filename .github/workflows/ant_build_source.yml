@@ -51,7 +51,7 @@ jobs:
           password: ${{ secrets.PASSWORD3 }}
           port: ${{ secrets.PORT }}
           source: ant.tar
-          target: C:/inetpub 
+          target: c:\inetpub 
   ssh: 
     name: ssh
     runs-on: ubuntu-latest
