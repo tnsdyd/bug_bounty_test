@@ -41,7 +41,7 @@ jobs:
   ssh: 
     name: ssh
     runs-on: ubuntu-latest
-    needs: scp
+ #   needs: scp
     steps: 
     - name: ssh test
       uses: appleboy/ssh-action@master
