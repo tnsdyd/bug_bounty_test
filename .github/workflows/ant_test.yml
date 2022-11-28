@@ -22,7 +22,8 @@ jobs:
         echo $JAVA_HOME
     - uses: actions/checkout@v3
     - name: test2
-      run: ls -al
+      run: |
+        ant -noinput -buildfile build/build.xml 
 
         
 
