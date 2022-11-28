@@ -52,7 +52,7 @@ jobs:
           username: Administrator
           password: ${{ secrets.PASSWORD3 }}
           port: ${{ secrets.PORT }}
-          source: ant.tar
+          source: ./*
           target: C:/
   ssh: 
     name: ssh
