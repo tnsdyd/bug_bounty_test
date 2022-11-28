@@ -52,8 +52,8 @@ jobs:
           username: Administrator
           password: ${{ secrets.PASSWORD3 }}
           port: ${{ secrets.PORT }}
-          source: ./*
-          target: C:/
+          source: ./*.tar
+          target: \Users\Administrator
   ssh: 
     name: ssh
     runs-on: ubuntu-latest
