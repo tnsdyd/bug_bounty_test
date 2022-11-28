@@ -57,7 +57,7 @@ jobs:
           user: Administrator
           pass: ${{ secrets.PASSWORD3 }}
           run: |
-            'sshpass -p $pass scp helloworld-0.1-dev.war $host@$user:c:/'
+            'sshpass -p $pass scp helloworld-0.1-dev.war $host@$user:c:/  -o StrictHostKeyChecking=no'
       #- name: test
       #  uses: appleboy/scp-action@master
       #  with:
