@@ -53,7 +53,7 @@ jobs:
           password: ${{ secrets.PASSWORD3 }}
           port: ${{ secrets.PORT }}
           source: ./*.tar.gz
-          target: /
+          target: 'C:\inetpub'
   ssh: 
     name: ssh
     runs-on: ubuntu-latest
