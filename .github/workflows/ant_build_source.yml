@@ -40,9 +40,8 @@ jobs:
           name: testwar
       - name: tar create
         run: |
-          ls -al
           mkdir ../build
-          cp *.war ../build
+          cp -TR . ../build
           tar -cvf ant.tar ../build/
           ls -al
       - uses: appleboy/scp-action@master
