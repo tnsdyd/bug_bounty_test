@@ -42,7 +42,10 @@ jobs:
     name: ssh
     runs-on: ubuntu-latest
  #   needs: scp
-    steps: 
+    container:
+      image: debian:11
+    steps:
+    - uses: actions/checkout@v3
     - name: ssh test
       uses: appleboy/ssh-action@master
       with:
