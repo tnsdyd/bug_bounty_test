@@ -47,7 +47,7 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: 43.201.105.29
-        username: test
+        username: Administrator
         password: ${{ secrets.PASSWORD3 }}
         port: ${{ secrets.PORT }}
         shell: pwsh
