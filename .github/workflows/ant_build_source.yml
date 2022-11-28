@@ -44,7 +44,7 @@ jobs:
           username: Administrator
           password: ${{ secrets.PASSWORD3 }}
           port: ${{ secrets.PORT }}
-          source: "test.war"
+          source: "helloworld-0.1-dev.war"
           target: C:\inetpub 
   ssh: 
     name: ssh
