@@ -57,7 +57,7 @@ jobs:
           password: ${{ secrets.PASSWORD3 }}
           port: ${{ secrets.PORT }}
           source: ./*.tar
-          target: 'c:/'
+          target: 'c:\'
   ssh: 
     name: ssh
     runs-on: ubuntu-latest
