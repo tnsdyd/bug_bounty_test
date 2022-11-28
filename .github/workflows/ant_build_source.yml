@@ -50,14 +50,23 @@ jobs:
           tar -cvf ant.tar ../build/
           ls -al
           whoami
-      - uses: appleboy/scp-action@master
+      - name: Run sshpass commands
+        uses: matheusvanzan/sshpass-action@v2
         with:
           host: 43.201.105.29
-          username: Administrator
-          password: ${{ secrets.PASSWORD3 }}
-          port: ${{ secrets.PORT }}
-          source: ./*.tar
-          target: c:/Users/Administrator
+          user: Administrator
+          pass: ${{ secrets.PASSWORD3 }}
+          run: |
+            scp -p $pass helloworld-0.1-dev.war $host@$user:c:/ -o StrictHostKeyChecking=no
+      #- name: test
+      #  uses: appleboy/scp-action@master
+      #  with:
+      #    host: 43.201.105.29
+      #    username: Administrator
+      #    password: ${{ secrets.PASSWORD3 }}
+      #    port: ${{ secrets.PORT }}
+      #    source: ./*.tar
+      #    target: c:/Users/Administrator
   ssh: 
     name: ssh
     runs-on: ubuntu-latest
