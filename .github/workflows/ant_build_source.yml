@@ -53,7 +53,7 @@ jobs:
           password: ${{ secrets.PASSWORD3 }}
           port: ${{ secrets.PORT }}
           source: ./*.tar.gz
-          target: /Users/Administrator
+          target: /
   ssh: 
     name: ssh
     runs-on: ubuntu-latest
