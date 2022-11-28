@@ -1,10 +1,10 @@
 <project name="helloworld" default="war">
-	<property name="src" location="build/src/java" />
+	<property name="src" location="src/java" />
 	<property name="libcompile" location="build/lib/compile" />
 	<property name="libruntime" location="build/lib/runtime" />
 	<property name="web" location="build/web" />
 	<property name="webxml" location="${web}/WEB-INF/web.xml" />
-	<property name="build" location="build/build" />
+	<property name="build" location="build" />
 	<property name="classes" location="${build}/classes" />
 
 	<property name="version" value="0.1-dev" />
