@@ -35,6 +35,7 @@ jobs:
   scp:
     name: scp
     runs-on: ubuntu-latest
+    needs: in_container_build
     container:
       image: mm0820/sshpass:0.1
     env:
