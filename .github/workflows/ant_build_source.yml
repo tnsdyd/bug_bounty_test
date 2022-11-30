@@ -45,7 +45,7 @@ jobs:
     - name: Download a Build Artifact
       uses: actions/download-artifact@v3.0.1
       with:
-        name: helloworld-0.1-dev.war
+        name: testwar
         path: ./helloworld-0.1-dev.war
     - uses: actions/checkout@v3
       name: Run a multi-line script
