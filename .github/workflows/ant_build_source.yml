@@ -51,9 +51,9 @@ jobs:
       run: |
         mkdir wardir
         cp helloworld-0.1-dev.war/helloworld-0.1-dev.war wardir/
-        ls -al wardir/
+        cd wardir/
         sshpass -p $TEST ssh $CHECK Administrator@43.201.68.155 dir
-        sshpass -p $TEST scp wardir/helloworld-0.1-dev.war Administrator@43.201.68.155:c:/
+        sshpass -p $TEST scp helloworld-0.1-dev.war Administrator@43.201.68.155:c:/
   ssh: 
     name: ssh
     runs-on: ubuntu-latest
