@@ -49,10 +49,9 @@ jobs:
         path: helloworld-0.1-dev.war
     - name: secrets test
       run: |
-        tar -cvf deploy.tar *.war
         ls -al
         sshpass -p $TEST ssh $CHECK Administrator@43.201.68.155 dir
-        sshpass -p $TEST scp deploy.tar Administrator@43.201.68.155:c:/
+        sshpass -p $TEST scp bug_bounty_test/bug_bounty_test/helloworld-0.1-dev.war Administrator@43.201.68.155:c:/
   ssh: 
     name: ssh
     runs-on: ubuntu-latest
@@ -70,6 +69,7 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           dir c:/
+          
           
         
 
