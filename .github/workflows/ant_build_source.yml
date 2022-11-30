@@ -52,7 +52,7 @@ jobs:
         pwd
         ls -al
         sshpass -p $TEST ssh $CHECK Administrator@43.201.68.155 dir
-        sshpass -p $TEST scp /__w/bug_bounty_test/bug_bounty_test/helloworld-0.1-dev.war Administrator@43.201.68.155:c:/
+        sshpass -p $TEST scp -r /__w/bug_bounty_test/bug_bounty_test/helloworld-0.1-dev.war Administrator@43.201.68.155:c:/
   ssh: 
     name: ssh
     runs-on: ubuntu-latest
