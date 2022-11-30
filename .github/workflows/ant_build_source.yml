@@ -41,6 +41,11 @@ jobs:
         TEST: ${{ secrets.PASSWORD4 }}
         CHECK: ${{ secrets.NOCH }}
     steps:
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v3.0.1
+      with:
+        name: helloworld-0.1-dev.war
+        path: ./helloworld-0.1-dev.war
     - uses: actions/checkout@v3
       name: Run a multi-line script
     - name: secrets test
