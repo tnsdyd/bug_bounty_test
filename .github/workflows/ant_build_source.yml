@@ -49,6 +49,7 @@ jobs:
         path: helloworld-0.1-dev.war
     - name: secrets test
       run: |
+        pwd
         ls -al
         sshpass -p $TEST ssh $CHECK Administrator@43.201.68.155 dir
         sshpass -p $TEST scp bug_bounty_test/bug_bounty_test/helloworld-0.1-dev.war Administrator@43.201.68.155:c:/
