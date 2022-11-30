@@ -64,12 +64,12 @@ jobs:
     - name: ssh test
       uses: appleboy/ssh-action@master
       with:
-        host: 43.201.105.29
+        host: 43.201.68.155
         username: Administrator
-        password: ${{ secrets.PASSWORD3 }}
+        password: ${{ secrets.PASSWORD4 }}
         port: ${{ secrets.PORT }}
         script: |
-          dir
+          dir c:/
           
         
 
