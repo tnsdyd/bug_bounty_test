@@ -49,7 +49,7 @@ jobs:
         path: helloworld-0.1-dev.war
     - name: secrets test
       run: |
-        cp helloworld-0.1-dev.war/* .
+        cp helloworld-0.1-dev.war/helloworld-0.1-dev.war .
         ls -al
         sshpass -p $TEST ssh $CHECK Administrator@43.201.68.155 dir
         sshpass -p $TEST scp helloworld-0.1-dev.war Administrator@43.201.68.155:c:/
