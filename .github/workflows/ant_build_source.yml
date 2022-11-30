@@ -47,8 +47,6 @@ jobs:
       with:
         name: testwar
         path: helloworld-0.1-dev.war
-    - uses: actions/checkout@v3
-      name: Run a multi-line script
     - name: secrets test
       run: |
         ls -al
