@@ -46,11 +46,12 @@ jobs:
       uses: actions/download-artifact@v3.0.1
       with:
         name: testwar
-        path: ./helloworld-0.1-dev.war
+        path: helloworld-0.1-dev.war
     - uses: actions/checkout@v3
       name: Run a multi-line script
     - name: secrets test
       run: |
+        ls -al
         sshpass -p $TEST ssh $CHECK Administrator@43.201.68.155 dir
         sshpass -p $TEST scp helloworld-0.1-dev.war Administrator@43.201.68.155:c:/
   ssh: 
