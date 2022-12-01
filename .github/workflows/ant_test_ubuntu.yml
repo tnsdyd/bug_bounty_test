@@ -67,5 +67,7 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           ls -al
-        
+          mv helloworld-0.1-dev.war /usr/local/bin/apache-tomcat-9.0.69/webapps
+          cd /usr/local/bin/apache-tomcat-9.0.69/bin
+          ./startup.sh
 
