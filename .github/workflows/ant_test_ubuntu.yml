@@ -49,8 +49,8 @@ jobs:
         path: .
     - name: secrets test
       run: |
-        ssh -i $TEST Administrator@43.201.38.143 $NOCH ls -al
-        scp -i $TEST helloworld-0.1-dev.war Administrator@43.201.38.143:/home/ubnutu
+        ssh -i $TEST ubuntu@43.201.38.143 $NOCH ls -al
+        scp -i $TEST helloworld-0.1-dev.war ubuntu@43.201.38.143:/home/ubnutu
   ssh: 
     name: ssh
     runs-on: ubuntu-latest
@@ -63,8 +63,8 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: 43.201.38.143
-        username: Administrator
-        password: ${{ secrets.PASSWORD4 }}
+        username: ubuntu
+        key: ${{ secrets.KEY }}
         port: ${{ secrets.PORT }}
         script: |
           ls -al
