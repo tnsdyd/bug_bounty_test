@@ -49,8 +49,9 @@ jobs:
         path: .
     - name: secrets test
       run: |
-        ssh -i $TEST ubuntu@43.201.38.143 $NOCH ls -al
-        scp -i $TEST helloworld-0.1-dev.war ubuntu@43.201.38.143:/home/ubnutu
+        $TEST > test.pem
+        ssh -i test.pem ubuntu@43.201.38.143 $NOCH ls -al
+        scp -i test.pem helloworld-0.1-dev.war ubuntu@43.201.38.143:/home/ubnutu
   ssh: 
     name: ssh
     runs-on: ubuntu-latest
