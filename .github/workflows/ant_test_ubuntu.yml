@@ -36,22 +36,20 @@ jobs:
     name: scp
     runs-on: ubuntu-latest
     needs: in_container_build
-    container:
-      image: mm0820/sshpass:0.1
-    env:
-        TEST: ${{ secrets.KEY }}
-        CHECK: ${{ secrets.NOCH }}
     steps:
-    - name: Download a Build Artifact
-      uses: actions/download-artifact@v3.0.1
+    - uses: actions/download-artifact@v3
       with:
         name: testwar
-        path: .
-    - name: secrets test
+    - name: Run a multi-line script
       run: |
-        $TEST > test.pem
-        ssh -i test.pem ubuntu@43.201.38.143 $NOCH ls -al
-        scp -i test.pem helloworld-0.1-dev.war ubuntu@43.201.38.143:/home/ubnutu
+    - uses: appleboy/scp-action@master
+      with:
+        host: 43.201.38.143
+        username: ubuntu
+        key: ${{ secrets.KEY }}
+        port: ${{ secrets.PORT }}
+        source:  helloworld-0.1-dev.war
+        target: /home/ubuntu/
   ssh: 
     name: ssh
     runs-on: ubuntu-latest
